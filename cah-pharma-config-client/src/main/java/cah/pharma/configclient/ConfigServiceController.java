@@ -6,7 +6,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cah.pharma.configclient.bean.BeanConfiguration;
+import cah.pharma.configclient.bean.ComponentConfiguration;
 
 @RefreshScope
 @RestController
@@ -25,17 +25,17 @@ public  class  ConfigServiceController {
 	private  ConfigurationData configurationData;
 
 	@GetMapping("/limits")
-	public  BeanConfiguration  getConfiguration ()
+	public  ComponentConfiguration  getConfiguration ()
 	{
-		return  new  BeanConfiguration (configuration.getMinimum(),
+		return  new  ComponentConfiguration (configuration.getMinimum(),
 				configuration.getMaximum(), valueFix, valueFunction);
 	}
 	
 	
 	@GetMapping("/refreshed")
-	public  BeanConfiguration  getRefreshConfiguration (@Value("${values.value_function}") String  valueFunction )
+	public  ComponentConfiguration  getRefreshConfiguration (@Value("${values.value_function}") String  valueFunction )
 	{
-		return  new  BeanConfiguration (configuration.getMinimum(),
+		return  new  ComponentConfiguration (configuration.getMinimum(),
 				configuration.getMaximum(), valueFix, valueFunction);
 	}
 	@GetMapping("/data")

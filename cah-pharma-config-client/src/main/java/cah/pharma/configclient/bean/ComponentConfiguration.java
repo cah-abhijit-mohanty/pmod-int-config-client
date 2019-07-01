@@ -5,14 +5,14 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class BeanConfiguration {
+public class ComponentConfiguration {
 
 	private  int   minResults;
 	private  int maxResults;		
 	private  String valueFix;
 	private  String valueFunction;
 	
-	public   BeanConfiguration ( int  minResult , int  maxResult , String  valueFix , String  valueFunction )
+	public   ComponentConfiguration ( int  minResult , int  maxResult , String  valueFix , String  valueFunction )
 	{
 		this . minResults = minResult;
 		this . maxResults = maxResult;

@@ -11,5 +11,4 @@ import lombok.Data;
 public  class  Configuration {
 	private  int minimum;
 	private  int maximum;	
-	private  int otherData; // is not defined as propiedd but nothing happens. Its value will be 0.
 }
